@@ -1,1 +1,1 @@
-This section is going to contain the cvs files for the historical data
+This section will contain the cvs files for the historical data of each ticker
