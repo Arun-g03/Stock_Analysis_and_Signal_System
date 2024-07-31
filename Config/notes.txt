@@ -1,0 +1,2 @@
+this section will contain files purposed for easy management of the system
+specifically setting values for constant variables and whatnot

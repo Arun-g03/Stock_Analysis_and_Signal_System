@@ -1,0 +1,2 @@
+This section will contain the core elements of the system, 
+seperated into key files for organisational purposes
