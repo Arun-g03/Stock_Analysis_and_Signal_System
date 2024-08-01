@@ -3,7 +3,7 @@
 import pandas as pd
 import yfinance as yf
 import alpaca_trade_api as tradeapi
-from src.logger import System_Log
+from Logger import System_Log
 
 # Setup the logger
 system_logger = System_Log.setup_logger('data_handler')

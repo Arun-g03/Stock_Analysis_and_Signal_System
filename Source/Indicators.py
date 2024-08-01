@@ -2,7 +2,7 @@
 
 import pandas as pd
 import ta
-from src.logger import System_Log
+from Logger import System_Log
 
 # Setup the logger
 system_logger = System_Log.setup_logger('indicators')
