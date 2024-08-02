@@ -3,13 +3,17 @@
 This system aims to analyse historical stock data, identify patterns and indicators, and generate trading signals based on rule-based strategies and machine-learning models. The system aims to assist traders and investors in making informed decisions by providing accurate and timely trading signals.
 
 ## Goal
-The primary goals of this system are:
+### The primary goals of this system are:
 
-Loading and preprocessing historical stock data from various sources.
-To initialise and compute various technical indicators and chart patterns.
-To generate trading signals using both rule-based and machine learning-based approaches.
-To provide visualisation tools for historical data, indicators, patterns, and trading signals.
-To backtest the trading strategies and evaluate their performance.
+  Loading and preprocessing historical stock data from various sources.
+
+  To initialise and compute various technical indicators and chart patterns.
+
+  To generate trading signals using both rule-based and machine learning-based approaches.
+
+  To provide visualisation tools for historical data, indicators, patterns, and trading signals.
+
+  To backtest the trading strategies and evaluate their performance.
 
 ## System Overview
 ### 1. Data Handling
