@@ -1,8 +1,8 @@
-###Stock Analysis and Signal Generating System
-##Purpose
+### Stock Analysis and Signal Generating System
+## Purpose
 The purpose of this system is to analyze historical stock data, identify patterns and indicators, and generate trading signals based on rule-based strategies and machine learning models. The system aims to assist traders and investors in making informed decisions by providing accurate and timely trading signals.
 
-##Goal
+## Goal
 The primary goals of this system are:
 
 To load and preprocess historical stock data from various sources.
