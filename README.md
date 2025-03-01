@@ -1,4 +1,5 @@
 # Stock Analysis and Signal Generating System
+# WORK IN PROGRESS
 ## Purpose
 This system aims to analyse historical stock data, identify patterns and indicators, and generate trading signals based on rule-based strategies and machine-learning models. The system aims to assist traders and investors in making informed decisions by providing accurate and timely trading signals.
 
