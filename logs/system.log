@@ -1,0 +1,52 @@
+2025-03-15 13:58:01,901 ERROR Error calculating Moving Average: Data must be 1-dimensional, got ndarray of shape (0, 1) instead
+2025-03-15 13:58:44,171 ERROR Error calculating Moving Average: Data must be 1-dimensional, got ndarray of shape (0, 1) instead
+2025-03-15 13:59:16,193 ERROR Error calculating Moving Average: Data must be 1-dimensional, got ndarray of shape (0, 1) instead
+2025-03-15 14:00:25,384 ERROR Error calculating Moving Average: Data must be 1-dimensional, got ndarray of shape (124, 1) instead
+2025-03-15 14:01:15,372 ERROR Error calculating Moving Average: 'Close'
+2025-03-15 14:02:01,965 ERROR Error calculating Moving Average: 'Close'
+2025-03-15 14:03:31,273 ERROR Error calculating Moving Average: 'Close'
+2025-03-15 14:03:58,166 ERROR Error calculating Moving Average: 'Close'
+2025-03-15 14:09:18,511 INFO Moving Average (window=20) calculated successfully.
+2025-03-15 14:09:18,512 INFO Exponential Moving Average (window=20) calculated successfully.
+2025-03-15 14:09:18,515 INFO Relative Strength Index (window=14) calculated successfully.
+2025-03-15 14:09:18,517 INFO Bollinger Bands (window=20, std_dev=2) calculated successfully.
+2025-03-15 14:09:18,519 INFO MACD (slow=26, fast=12, sign=9) calculated successfully.
+2025-03-15 14:09:18,522 INFO Average True Range (window=14) calculated successfully.
+2025-03-15 14:09:18,524 INFO Stochastic Oscillator (window=14, smooth_window=3) calculated successfully.
+2025-03-15 14:09:18,527 INFO Commodity Channel Index (window=20) calculated successfully.
+2025-03-15 14:09:18,530 INFO Ichimoku Cloud (window1=9, window2=26, window3=52) calculated successfully.
+2025-03-15 14:09:18,531 ERROR Error calculating Aroon Indicator: __init__() missing 1 required positional argument: 'low'
+2025-03-15 14:09:18,548 INFO Parabolic SAR (acceleration=0.02, maximum=0.2) calculated successfully.
+2025-03-15 14:09:18,550 INFO Volume Weighted Average Price (window=14) calculated successfully.
+2025-03-15 14:09:18,551 INFO On-Balance Volume calculated successfully.
+2025-03-15 14:09:18,555 INFO Money Flow Index (window=14) calculated successfully.
+2025-03-15 14:09:18,557 INFO Chaikin Money Flow (window=20) calculated successfully.
+2025-03-15 14:09:18,559 INFO Ease of Movement (window=14) calculated successfully.
+2025-03-15 14:09:18,561 INFO Accumulation/Distribution Index calculated successfully.
+2025-03-15 14:09:18,564 INFO Ultimate Oscillator (short_window=7, long_window=14) calculated successfully.
+2025-03-15 14:09:18,565 INFO Z-Score (window=20) calculated successfully.
+2025-03-15 14:09:18,568 INFO Pivot Points calculated successfully.
+2025-03-15 14:09:18,570 INFO Detrended Price Oscillator (DPO) calculated successfully.
+2025-03-15 14:09:18,571 INFO Rate of Change (ROC) calculated successfully.
+2025-03-15 14:16:31,248 INFO Moving Average (window=20) calculated successfully.
+2025-03-15 14:16:31,249 INFO Exponential Moving Average (window=20) calculated successfully.
+2025-03-15 14:16:31,251 INFO Relative Strength Index (window=14) calculated successfully.
+2025-03-15 14:16:31,254 INFO Bollinger Bands (window=20, std_dev=2) calculated successfully.
+2025-03-15 14:16:31,256 INFO MACD (slow=26, fast=12, sign=9) calculated successfully.
+2025-03-15 14:16:31,259 INFO Average True Range (window=14) calculated successfully.
+2025-03-15 14:16:31,261 INFO Stochastic Oscillator (window=14, smooth_window=3) calculated successfully.
+2025-03-15 14:16:31,265 INFO Commodity Channel Index (window=20) calculated successfully.
+2025-03-15 14:16:31,268 INFO Ichimoku Cloud (window1=9, window2=26, window3=52) calculated successfully.
+2025-03-15 14:16:31,269 ERROR Error calculating Aroon Indicator: __init__() missing 1 required positional argument: 'low'
+2025-03-15 14:16:31,284 INFO Parabolic SAR (acceleration=0.02, maximum=0.2) calculated successfully.
+2025-03-15 14:16:31,286 INFO Volume Weighted Average Price (window=14) calculated successfully.
+2025-03-15 14:16:31,288 INFO On-Balance Volume calculated successfully.
+2025-03-15 14:16:31,291 INFO Money Flow Index (window=14) calculated successfully.
+2025-03-15 14:16:31,294 INFO Chaikin Money Flow (window=20) calculated successfully.
+2025-03-15 14:16:31,296 INFO Ease of Movement (window=14) calculated successfully.
+2025-03-15 14:16:31,297 INFO Accumulation/Distribution Index calculated successfully.
+2025-03-15 14:16:31,300 INFO Ultimate Oscillator (short_window=7, long_window=14) calculated successfully.
+2025-03-15 14:16:31,302 INFO Z-Score (window=20) calculated successfully.
+2025-03-15 14:16:31,304 INFO Pivot Points calculated successfully.
+2025-03-15 14:16:31,305 INFO Detrended Price Oscillator (DPO) calculated successfully.
+2025-03-15 14:16:31,307 INFO Rate of Change (ROC) calculated successfully.

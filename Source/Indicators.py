@@ -1,8 +1,9 @@
 # indicators.py
 
 import pandas as pd
+import numpy as np
 import ta
-from Logger import System_Log
+from Source.Logger import System_Log
 
 # Setup the logger
 system_logger = System_Log.setup_logger('indicators')
@@ -257,6 +258,132 @@ class Indicators:
         except Exception as e:
             system_logger.error(f"Error calculating Ultimate Oscillator: {e}")
             raise
+
+    @staticmethod
+    def z_score(data, window=20):
+        """
+        Calculate Z-Score for mean reversion analysis.
+        """
+        try:
+            mean = data['Close'].rolling(window=window).mean()
+            std = data['Close'].rolling(window=window).std()
+            data['Z_Score'] = (data['Close'] - mean) / std
+            system_logger.info(f"Z-Score (window={window}) calculated successfully.")
+            return data
+        except Exception as e:
+            system_logger.error(f"Error calculating Z-Score: {e}")
+            raise
+    
+    @staticmethod
+    def sharpe_ratio(returns, risk_free_rate=0.02):
+        """
+        Calculate Sharpe Ratio.
+        """
+        try:
+            return_mean = returns.mean()
+            return_std = returns.std()
+            sharpe_ratio = (return_mean - risk_free_rate) / return_std
+            system_logger.info("Sharpe Ratio calculated successfully.")
+            return sharpe_ratio
+        except Exception as e:
+            system_logger.error(f"Error calculating Sharpe Ratio: {e}")
+            raise
+    
+    @staticmethod
+    def sortino_ratio(returns, risk_free_rate=0.02):
+        """
+        Calculate Sortino Ratio (downside risk measurement).
+        """
+        try:
+            downside_returns = returns[returns < 0]
+            downside_std = downside_returns.std()
+            sortino_ratio = (returns.mean() - risk_free_rate) / downside_std
+            system_logger.info("Sortino Ratio calculated successfully.")
+            return sortino_ratio
+        except Exception as e:
+            system_logger.error(f"Error calculating Sortino Ratio: {e}")
+            raise
+    
+    @staticmethod
+    def pivot_points(data):
+        """
+        Calculate Standard Pivot Points.
+        """
+        try:
+            data['Pivot'] = (data['High'] + data['Low'] + data['Close']) / 3
+            data['R1'] = 2 * data['Pivot'] - data['Low']
+            data['S1'] = 2 * data['Pivot'] - data['High']
+            data['R2'] = data['Pivot'] + (data['High'] - data['Low'])
+            data['S2'] = data['Pivot'] - (data['High'] - data['Low'])
+            system_logger.info("Pivot Points calculated successfully.")
+            return data
+        except Exception as e:
+            system_logger.error(f"Error calculating Pivot Points: {e}")
+            raise
+    
+    @staticmethod
+    def fibonacci_retracement(high, low):
+        """
+        Calculate Fibonacci retracement levels.
+        """
+        try:
+            levels = {
+                '0.0%': high,
+                '23.6%': high - (0.236 * (high - low)),
+                '38.2%': high - (0.382 * (high - low)),
+                '50.0%': high - (0.5 * (high - low)),
+                '61.8%': high - (0.618 * (high - low)),
+                '78.6%': high - (0.786 * (high - low)),
+                '100.0%': low
+            }
+            system_logger.info("Fibonacci Retracement levels calculated successfully.")
+            return levels
+        except Exception as e:
+            system_logger.error(f"Error calculating Fibonacci Retracement: {e}")
+            raise
+    
+    @staticmethod
+    def hurst_exponent(data, window=100):
+        """
+        Calculate Hurst Exponent to analyze market randomness.
+        """
+        try:
+            lags = range(2, window)
+            tau = [np.std(np.subtract(data['Close'][lag:], data['Close'][:-lag])) for lag in lags]
+            hurst = np.polyfit(np.log(lags), np.log(tau), 1)[0]
+            system_logger.info("Hurst Exponent calculated successfully.")
+            return hurst
+        except Exception as e:
+            system_logger.error(f"Error calculating Hurst Exponent: {e}")
+            raise
+    
+    @staticmethod
+    def detrended_price_oscillator(data, window=20):
+        """
+        Calculate Detrended Price Oscillator (DPO).
+        """
+        try:
+            sma = data['Close'].rolling(window=window).mean()
+            data['DPO'] = data['Close'].shift(int(window / 2) + 1) - sma
+            system_logger.info("Detrended Price Oscillator (DPO) calculated successfully.")
+            return data
+        except Exception as e:
+            system_logger.error(f"Error calculating DPO: {e}")
+            raise
+    
+    @staticmethod
+    def rate_of_change(data, window=14):
+        """
+        Calculate Rate of Change (ROC).
+        """
+        try:
+            data['ROC'] = data['Close'].pct_change(periods=window) * 100
+            system_logger.info("Rate of Change (ROC) calculated successfully.")
+            return data
+        except Exception as e:
+            system_logger.error(f"Error calculating ROC: {e}")
+            raise
+
 
 # Example usage:
 # data = pd.read_csv('path_to_your_csv')

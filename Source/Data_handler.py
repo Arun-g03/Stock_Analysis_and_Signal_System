@@ -4,6 +4,7 @@ import pandas as pd
 import yfinance as yf
 import alpaca_trade_api as tradeapi
 from Logger import System_Log
+from Config.Config import Alpaca_API_KEY, Alpaca_SECRET_KEY
 
 # Setup the logger
 system_logger = System_Log.setup_logger('data_handler')
@@ -25,10 +26,24 @@ class DataHandler:
     @staticmethod
     def load_from_yfinance(ticker, start_date, end_date):
         """
-        Load historical data from Yahoo Finance.
+        Load historical data from Yahoo Finance with proper column handling.
         """
         try:
             data = yf.download(ticker, start=start_date, end=end_date)
+            if data.empty:
+                raise ValueError("No data received from Yahoo Finance. Check API requests.")
+            
+            # Flatten MultiIndex if needed
+            if isinstance(data.columns, pd.MultiIndex):
+                data.columns = [col[0] for col in data.columns]
+            
+            # Ensure 'Close' column exists
+            if "Close" not in data.columns:
+                if "Adj Close" in data.columns:
+                    data.rename(columns={"Adj Close": "Close"}, inplace=True)
+                else:
+                    raise KeyError("Neither 'Close' nor 'Adj Close' columns found in Yahoo Finance data.")
+            
             data.reset_index(inplace=True)
             system_logger.info(f"Data loaded successfully from Yahoo Finance for {ticker} from {start_date} to {end_date}")
             return data
@@ -54,6 +69,8 @@ class DataHandler:
                 'Close': [bar.c for bar in bars],
                 'Volume': [bar.v for bar in bars]
             })
+            data['Date'] = pd.to_datetime(data['Date'])  # Ensure correct datetime format
+            
             system_logger.info(f"Data loaded successfully from Alpaca API for {ticker} from {start_date} to {end_date}")
             return data
         except Exception as e:
