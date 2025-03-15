@@ -17,6 +17,10 @@ This system aims to analyse historical stock data, identify patterns and indicat
 
   To backtest the trading strategies and evaluate their performance.
 
+![UML SYSTEM DIAGRAM](UML_Diagram.png)
+
+
+
 ## System Overview
 ### 1. Data Handling
 The system can load historical stock data from multiple sources:

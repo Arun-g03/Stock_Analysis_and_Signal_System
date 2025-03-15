@@ -1,12 +1,13 @@
 # main.py
 
-from src.data_handler import DataHandler
-from src.feature_engineering import FeatureEngineering
-from src.signal_generator import SignalGenerator
-from src.model import Model
-from src.visualizer import Visualizer
-from src.validator import Validator
-from config.config import LOG_PATH
+from Source.Data_handler import DataHandler
+from Source.Feature_engineering import FeatureEngineering
+from Source.Signal_Generator import SignalGenerator
+from Source.model import Model
+from Source.Visualiser import Visualizer
+from Source.Validator import Validator
+from Config.Config import LOG_PATH
+from Source.Logger import System_Log
 
 def main():
     try:
