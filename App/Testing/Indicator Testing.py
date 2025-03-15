@@ -1,7 +1,7 @@
 import yfinance as yf
 import matplotlib.pyplot as plt
 import pandas as pd
-from Source.Indicators import Indicators
+from App.Indicators import Indicators
 
 # Fetch Apple stock data
 symbol = "AAPL"
