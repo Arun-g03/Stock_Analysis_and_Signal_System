@@ -76,8 +76,21 @@ class DataHandler:
         except Exception as e:
             system_logger.error(f"Error loading data from Alpaca API: {e}")
             raise
-
-# Example usage:
-# data_csv = DataHandler.load_from_csv('path_to_your_csv.csv')
-# data_yf = DataHandler.load_from_yfinance('AAPL', '2020-01-01', '2021-01-01')
-# data_alpaca = DataHandler.load_from_alpaca('AAPL', '2020-01-01', '2021-01-01', 'your_api_key', 'your_api_secret', 'https://paper-api.alpaca.markets')
+    
+    @staticmethod
+    def run(ticker, start_date, end_date, data_source='yfinance', api_key=None, api_secret=None, base_url=None):
+        """
+        Run the data handler to fetch data from the selected source.
+        """
+        try:
+            if data_source == 'yfinance':
+                return DataHandler.load_from_yfinance(ticker, start_date, end_date)
+            elif data_source == 'alpaca':
+                if not all([api_key, api_secret, base_url]):
+                    raise ValueError("Missing Alpaca API credentials.")
+                return DataHandler.load_from_alpaca(ticker, start_date, end_date, api_key, api_secret, base_url)
+            else:
+                raise ValueError("Invalid data source. Choose 'yfinance' or 'alpaca'.")
+        except Exception as e:
+            system_logger.error(f"Error running data handler: {e}")
+            raise

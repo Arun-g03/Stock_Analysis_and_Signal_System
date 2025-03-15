@@ -88,17 +88,17 @@ class FeatureEngineering:
             raise
 
     @staticmethod
-    def normalize_data(data, columns):
+    def normalise_data(data, columns):
         """
-        Normalize specified columns in the data.
+        Normalise specified columns in the data.
         """
         try:
             scaler = MinMaxScaler()
             data[columns] = scaler.fit_transform(data[columns])
-            system_logger.info("Data normalized successfully.")
+            system_logger.info("Data normalised successfully.")
             return data
         except Exception as e:
-            system_logger.error(f"Error normalizing data: {e}")
+            system_logger.error(f"Error normalising data: {e}")
             raise
 
     @staticmethod
@@ -128,7 +128,7 @@ class FeatureEngineering:
 
             feature_columns = [col for col in data.columns if col not in ['Date', 'Open', 'High', 'Low', 'Close', 'Volume']]
             data = FeatureEngineering.create_lagged_features(data, feature_columns, lags=3)
-            data = FeatureEngineering.normalize_data(data, feature_columns)
+            data = FeatureEngineering.normalise_data(data, feature_columns)
 
             # Drop rows with NaN values created by lagging
             data.dropna(inplace=True)

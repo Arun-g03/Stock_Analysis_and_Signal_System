@@ -345,7 +345,7 @@ class Indicators:
     @staticmethod
     def hurst_exponent(data, window=100):
         """
-        Calculate Hurst Exponent to analyze market randomness.
+        Calculate Hurst Exponent to analyse market randomness.
         """
         try:
             lags = range(2, window)

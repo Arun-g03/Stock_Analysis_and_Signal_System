@@ -1,13 +1,13 @@
-# visualizer.py
+# visualiser.py
 
 import matplotlib.pyplot as plt
 import seaborn as sns
 from Logger import System_Log
 
 # Setup the logger
-system_logger = System_Log.setup_logger('visualizer')
+system_logger = System_Log.setup_logger('visualiser')
 
-class Visualizer:
+class Visualiser:
     @staticmethod
     def plot_historical_data(data, ticker):
         """
@@ -107,8 +107,8 @@ class Visualizer:
 
 # Example usage:
 # data = pd.read_csv('path_to_your_csv')
-# Visualizer.plot_historical_data(data, 'AAPL')
-# Visualizer.plot_indicator(data, 'RSI', 'AAPL')
-# Visualizer.plot_signals(data, 'AAPL')
-# Visualizer.plot_balance(data, 'AAPL')
-# Visualizer.plot_multiple_indicators(data, ['RSI', 'MACD', 'BB_High', 'BB_Low'], 'AAPL')
+# Visualiser.plot_historical_data(data, 'AAPL')
+# Visualiser.plot_indicator(data, 'RSI', 'AAPL')
+# Visualiser.plot_signals(data, 'AAPL')
+# Visualiser.plot_balance(data, 'AAPL')
+# Visualiser.plot_multiple_indicators(data, ['RSI', 'MACD', 'BB_High', 'BB_Low'], 'AAPL')
